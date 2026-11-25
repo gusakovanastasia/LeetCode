@@ -1,0 +1,13 @@
+// Title: Immediate Food Delivery II
+            // Difficulty: Medium
+            // Language: PostgreSQL
+            // Link: https://leetcode.com/problems/immediate-food-delivery-ii/
+
+SELECT
+    ROUND((SUM(CASE WHEN order_date = customer_pref_delivery_date THEN 1 ELSE 0 
+    END) * 100.0 / COUNT(delivery_id)), 2) AS immediate_percentage 
+FROM
+    rn
+WHERE
+    rn = 1
+
