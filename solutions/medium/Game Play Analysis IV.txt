@@ -1,0 +1,13 @@
+// Title: Game Play Analysis IV
+            // Difficulty: Medium
+            // Language: PostgreSQL
+            // Link: https://leetcode.com/problems/game-play-analysis-iv/
+
+    GROUP BY 
+        player_id
+    ) a1
+LEFT JOIN
+    Activity a2
+    ON a1.player_id = a2.player_id
+    AND a1.event_date + 1  = a2.event_date
+
